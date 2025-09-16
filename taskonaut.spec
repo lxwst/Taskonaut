@@ -42,7 +42,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='time-tracker',
+    name='taskonaut',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

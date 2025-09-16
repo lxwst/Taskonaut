@@ -22,8 +22,8 @@ A modern desktop overlay for time tracking with Excel integration and project ma
 
 ### Setup
 ```bash
-git clone https://github.com/[username]/time-tracker.git
-cd time-tracker
+git clone https://github.com/[username]/taskonaut.git
+cd taskonaut
 pip install -r requirements.txt
 ```
 
@@ -187,7 +187,7 @@ To create a standalone .exe file:
 python build.py
 ```
 
-The executable will be created in the `dist/` folder as `time-tracker.exe`.
+The executable will be created in the `dist/` folder as `taskonaut.exe`.
 
 ## 📋 Requirements
 

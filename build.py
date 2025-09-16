@@ -104,7 +104,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='time-tracker',
+    name='taskonaut',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -121,7 +121,7 @@ exe = EXE(
 )
 '''
     
-    with open("time-tracker.spec", "w", encoding="utf-8") as f:
+    with open("taskonaut.spec", "w", encoding="utf-8") as f:
         f.write(spec_content)
     
     print("✅ Spec file created")
@@ -131,7 +131,7 @@ def build_executable():
     """Build the executable"""
     # Use explicit Python path to ensure we use the correct Python version
     python_exe = sys.executable
-    cmd = f'"{python_exe}" -m PyInstaller time-tracker.spec --clean'
+    cmd = f'"{python_exe}" -m PyInstaller taskonaut.spec --clean'
     return run_command(cmd, "Building executable")
 
 

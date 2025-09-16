@@ -23,14 +23,14 @@ def read_requirements():
         return ["pandas>=1.5.0", "openpyxl>=3.1.0"]
 
 setup(
-    name="time-tracker",
+    name="taskonaut",
     version="1.0.0",
     author="Your Name",
     author_email="your.email@example.com",
     description="Desktop overlay for time tracking with Excel integration",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/time-tracker",
+    url="https://github.com/yourusername/taskonaut",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[
@@ -50,7 +50,7 @@ setup(
     install_requires=read_requirements(),
     entry_points={
         "console_scripts": [
-            "time-tracker=main:main",
+            "taskonaut=main:main",
         ],
     },
     include_package_data=True,

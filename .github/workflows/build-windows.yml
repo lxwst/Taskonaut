@@ -29,22 +29,22 @@ jobs:
       - name: Build with PyInstaller
         run: |
           # Build a single-file executable. Remove --console for GUI apps.
-          pyinstaller --onefile --name time-tracker src/main.py
+          pyinstaller --onefile --name taskonaut src/main.py
 
       - name: Prepare output
         run: |
           # Ensure output directory exists
           if (-not (Test-Path -Path 'out')) { New-Item -ItemType Directory -Path 'out' | Out-Null }
 
-          if (Test-Path 'dist\time-tracker.exe') {
-            Copy-Item -Path 'dist\time-tracker.exe' -Destination 'out\time-tracker.exe' -Force
+          if (Test-Path 'dist\taskonaut.exe') {
+            Copy-Item -Path 'dist\taskonaut.exe' -Destination 'out\taskonaut.exe' -Force
           } else {
-            Write-Error 'ERROR: dist\time-tracker.exe not found'
+            Write-Error 'ERROR: dist\taskonaut.exe not found'
             exit 1
           }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: time-tracker-windows
-          path: out/time-tracker.exe
+          name: taskonaut-windows
+          path: out/taskonaut.exe
