@@ -1,4 +1,4 @@
-# 🕐 Time Tracker
+# 🕐 taskonaut
 
 A modern desktop overlay for time tracking with Excel integration and project management.
 

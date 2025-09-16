@@ -12,7 +12,7 @@ def read_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             return f.read()
     except FileNotFoundError:
-        return "Time Tracker - Desktop time tracking application"
+        return "taskonaut - Desktop time tracking application"
 
 # Read requirements
 def read_requirements():

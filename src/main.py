@@ -22,13 +22,13 @@ def main():
     try:
         # Create main window (hidden)
         root = tk.Tk()
-        root.title("Time Tracker - Beautiful Clean")
+        root.title("taskonaut - Beautiful Clean")
         
         # Create application
         app = BeautifulCleanOverlay(root)
         
         # Start main loop
-        print("🚀 Starting Beautiful Clean Time Tracker...")
+        print("🚀 Starting Beautiful Clean taskonaut...")
         print("📊 Using JSON database with Excel export")
         root.mainloop()
         

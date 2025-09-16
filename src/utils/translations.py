@@ -1,5 +1,5 @@
 """
-Translation Module for Time Tracker
+Translation Module for taskonaut
 
 Provides translation utilities and text constants in English
 """
