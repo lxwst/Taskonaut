@@ -1,0 +1,67 @@
+{
+  "work_hours": {
+    "monday": 8.0,
+    "tuesday": 8.0,
+    "wednesday": 8.0,
+    "thursday": 10.0,
+    "friday": 8.0,
+    "saturday": 0.0,
+    "sunday": 0.0
+  },
+  "break_times": {
+    "min_break_after_hours": 6.0,
+    "min_break_duration_minutes": 30
+  },
+  "excel_file": "working_hours.xlsx",
+  "note_dialog": true,
+  "overlay": {
+    "enabled": true,
+    "width": 240,
+    "height": 160,
+    "font_size": 12,
+    "transparency": 0.6,
+    "background_color": "#2c3e50",
+    "text_color": "#ecf0f1",
+    "border_width": 2,
+    "border_color": "#3498db",
+    "position": {
+      "x": 1647,
+      "y": 822
+    }
+  },
+  "overlay_settings": {
+    "size": "240x160",
+    "alpha": 0.6,
+    "topmost": true,
+    "position": {
+      "x": 1647,
+      "y": 822
+    }
+  },
+  "current_project": "Daily Work",
+  "current_task": "",
+  "excel_export": {
+    "filename": "working_hours.xlsx",
+    "auto_export_daily": true
+  },
+  "projects_data": {
+    "active_project": "General",
+    "active_task": "Daily Work",
+    "projects": {
+      "General": [
+        "Daily Work"
+      ],
+      "BREAK": [
+        "Lunch Break",
+        "Coffee Break",
+        "Short Break",
+        "Personal Break",
+        "Daily Work"
+      ]
+    },
+    "recent_combinations": [
+      "General - Daily Work"
+    ]
+  },
+  "auto_split_minutes": 10
+}

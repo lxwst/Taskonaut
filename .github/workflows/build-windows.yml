@@ -1,0 +1,45 @@
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  build-windows:
+    name: Build on Windows
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt || true; fi
+          pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: |
+          # Build a single-file executable. Remove --console for GUI apps.
+          pyinstaller --onefile --name time-tracker src/main.py
+
+      - name: Prepare output
+        run: |
+          mkdir -p out
+          if exist dist\time-tracker.exe (
+            copy dist\time-tracker.exe out\time-tracker.exe
+          ) else (
+            echo "ERROR: dist\time-tracker.exe not found" & exit 1
+          )
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: time-tracker-windows
+          path: out/time-tracker.exe

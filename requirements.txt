@@ -1,0 +1,16 @@
+# Core Dependencies
+pandas>=1.5.0
+openpyxl>=3.1.0
+
+# GUI Framework (tkinter comes with Python standard library)
+# PyQt5 not needed for this project
+
+# Optional: For enhanced Excel handling
+xlsxwriter>=3.0.0
+
+# Build Dependencies (for creating EXE)
+pyinstaller>=5.0.0
+
+# Development Dependencies (optional)
+# pytest>=7.0.0  # For testing
+# black>=22.0.0  # For code formatting
