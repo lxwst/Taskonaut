@@ -29,7 +29,8 @@ jobs:
       - name: Build with PyInstaller
         run: |
           # Build a single-file executable. Remove --console for GUI apps.
-          pyinstaller --onefile --name taskonaut src/main.py
+          #pyinstaller --onefile --name taskonaut src/main.py
+          python build.py
 
       - name: Prepare output
         run: |
