@@ -1,0 +1,48 @@
+name: Release Build and Upload
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-upload:
+    name: Build and Upload Release Asset (Windows)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if (Test-Path 'requirements.txt') {
+            python -m pip install -r requirements.txt
+          }
+          python -m pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: |
+          python build.py
+
+      - name: Prepare output
+        run: |
+          if (-not (Test-Path -Path 'out')) { New-Item -ItemType Directory -Path 'out' | Out-Null }
+          if (Test-Path 'dist\taskonaut.exe') {
+            Copy-Item -Path 'dist\taskonaut.exe' -Destination 'out\taskonaut.exe' -Force
+          } else {
+            Write-Error 'ERROR: dist\taskonaut.exe not found'
+            exit 1
+          }
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/taskonaut.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
